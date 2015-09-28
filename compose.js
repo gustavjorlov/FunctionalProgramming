@@ -58,9 +58,7 @@ var fork = R.curry(function(lastly, f, g, x) {
   return lastly(f(x), g(x));
 });
 
-var avg = function(numbers){
-	return fork(R.divide, R.sum, R.length, numbers);
-};
+var avg = fork(R.divide, R.sum, R.length);
 console.log(avg([1, 2, 3, 4])); //prints: 2.5
 console.log(avg([2, 42, 35, 4])); //prints: 20.75
 
